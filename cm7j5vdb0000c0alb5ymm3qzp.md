@@ -3,7 +3,7 @@ title: "Exploring Kubernetes Architecture: A Simple Guide"
 datePublished: Mon Feb 24 2025 14:36:45 GMT+0000 (Coordinated Universal Time)
 cuid: cm7j5vdb0000c0alb5ymm3qzp
 slug: exploring-kubernetes-architecture-a-simple-guide
-cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1760877183132/6f64774e-0fc7-49f0-bdc1-b9cd9b07e349.png
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1760877334477/f6ac9402-0a8d-45ab-8ed0-766d8b2b4096.png
 tags: linux, aws, kubernetes, google, devops, 90daysofdevops, trainwithshubham
 
 ---
