@@ -1,5 +1,5 @@
 ---
-title: "Terraform (IaaC) (01) : Day - 51"
+title: "Terraform (IaaC)"
 datePublished: Fri Dec 20 2024 05:30:14 GMT+0000 (Coordinated Universal Time)
 cuid: cm4wbabf7002x09i23ea0eqi3
 slug: terraform-iaac-01-day-51
