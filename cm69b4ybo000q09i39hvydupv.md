@@ -1,6 +1,6 @@
 ---
 title: "Ansible - 1 (Write your first playbook)"
-datePublished: Thu Jan 23 2025 12:26:46 GMT+0000 (Coordinated Universal Time)
+datePublished: Tue Sep 09 2025 18:30:00 GMT+0000 (Coordinated Universal Time)
 cuid: cm69b4ybo000q09i39hvydupv
 slug: ansible-1-write-your-first-playbook
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1737635167278/e938680f-d06d-4ad7-9c62-94b6fe26b727.avif
