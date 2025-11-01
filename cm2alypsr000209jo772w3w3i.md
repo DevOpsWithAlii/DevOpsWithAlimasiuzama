@@ -1,6 +1,6 @@
 ---
 title: "Linux Interview Questions Part- 1"
-datePublished: Tue Oct 15 2024 15:38:48 GMT+0000 (Coordinated Universal Time)
+datePublished: Thu Oct 09 2025 18:30:00 GMT+0000 (Coordinated Universal Time)
 cuid: cm2alypsr000209jo772w3w3i
 slug: linux-interview-questions-part-1
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1761059531312/cd0b2cc8-3a04-4642-9949-e1030f6a2509.jpeg
