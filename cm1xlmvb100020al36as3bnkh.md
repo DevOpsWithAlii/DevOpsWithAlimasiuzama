@@ -1,6 +1,6 @@
 ---
-title: "Linux"
-datePublished: Fri Oct 04 2024 18:30:00 GMT+0000 (Coordinated Universal Time)
+title: "Linux ?"
+datePublished: Wed Oct 01 2025 18:30:00 GMT+0000 (Coordinated Universal Time)
 cuid: cm1xlmvb100020al36as3bnkh
 slug: linux-day-1
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1728219882408/fb0343c6-2b83-40e9-8183-d850ab776b78.jpeg
@@ -24,7 +24,7 @@ At its core, Linux is built around the **Linux kernel**—the part of the operat
     
 * **Fedora**: Always up-to-date with the latest features.
     
-* **CentOS**: Perfect for servers and enterprise use.
+* **CentOS**: Perfect for servers and enterprise use..
     
 
 ## What Makes Linux Stand Out?
