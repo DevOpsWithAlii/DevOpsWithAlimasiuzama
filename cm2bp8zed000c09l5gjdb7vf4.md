@@ -1,6 +1,6 @@
 ---
 title: "Git & GitHub"
-datePublished: Thu Oct 09 2025 18:30:00 GMT+0000 (Coordinated Universal Time)
+datePublished: Fri Oct 10 2025 18:30:00 GMT+0000 (Coordinated Universal Time)
 cuid: cm2bp8zed000c09l5gjdb7vf4
 slug: git-and-github
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1729072622823/9a31c42b-99c8-409d-aa3e-e06a30ca8d98.webp
