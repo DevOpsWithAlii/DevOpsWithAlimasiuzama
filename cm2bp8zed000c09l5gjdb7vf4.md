@@ -1,6 +1,6 @@
 ---
 title: "Git & GitHub"
-datePublished: Wed Oct 16 2024 09:58:32 GMT+0000 (Coordinated Universal Time)
+datePublished: Thu Oct 09 2025 18:30:00 GMT+0000 (Coordinated Universal Time)
 cuid: cm2bp8zed000c09l5gjdb7vf4
 slug: git-and-github
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1729072622823/9a31c42b-99c8-409d-aa3e-e06a30ca8d98.webp
@@ -16,7 +16,7 @@ Today, we’re going to explore the tools that DevOps engineers rely on every da
 
 Git is basically a tool that helps you manage your code, keeping track of every change you make, like a save button that logs every version of your project. It allows you to go back to a previous version of your code whenever you need to, which is super useful if something breaks. This is called **version control**.
 
-It’s also great for working with others—Git lets multiple people work on the same project at the same time, and it helps merge everyone’s changes together without messing things up. In DevOps, where you’re working with code and configurations constantly, Git ensures you don’t lose track of what’s happening and who made which changes.
+It’s also great for working with others—Git lets multiple people work on the same project at the same time, and it helps merge everyone’s changes together without messing things up. In DevOps, where you’re working with code and configurations constantly, Git ensures you don’t lose track of what’s happening and who made which changes..
 
 ### What’s the Difference Between the "Main" and "Master" Branch?
 
