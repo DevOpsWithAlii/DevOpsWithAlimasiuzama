@@ -1,6 +1,6 @@
 ---
 title: "AWS IAM & Its Features-"
-datePublished: Sat Oct 26 2024 07:49:06 GMT+0000 (Coordinated Universal Time)
+datePublished: Tue Oct 21 2025 18:30:00 GMT+0000 (Coordinated Universal Time)
 cuid: cm2pv1281000309mccsnr8pjr
 slug: aws-iam-and-its-features
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1760868331343/efc5b561-db64-4dfd-894d-75ae2161ded1.png
