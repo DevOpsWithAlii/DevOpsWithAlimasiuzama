@@ -1,6 +1,6 @@
 ---
 title: "Docker"
-datePublished: Fri Nov 29 2024 13:17:52 GMT+0000 (Coordinated Universal Time)
+datePublished: Mon Oct 13 2025 18:30:00 GMT+0000 (Coordinated Universal Time)
 cuid: cm42rqt0j000409mna4es9xps
 slug: docker
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1761245336019/73593592-743b-467f-9120-6d21f4fbfcd3.png
