@@ -1,6 +1,6 @@
 ---
 title: "Exploring Kubernetes Architecture: A Simple Guide"
-datePublished: Mon Feb 24 2025 14:36:45 GMT+0000 (Coordinated Universal Time)
+datePublished: Mon Sep 15 2025 18:30:00 GMT+0000 (Coordinated Universal Time)
 cuid: cm7j5vdb0000c0alb5ymm3qzp
 slug: exploring-kubernetes-architecture-a-simple-guide
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1760877334477/f6ac9402-0a8d-45ab-8ed0-766d8b2b4096.png
