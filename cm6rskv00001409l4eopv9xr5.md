@@ -1,6 +1,6 @@
 ---
 title: "Ansible - 02 (Ansible Playbooks & Modules)"
-datePublished: Wed Feb 05 2025 10:54:53 GMT+0000 (Coordinated Universal Time)
+datePublished: Fri Sep 19 2025 18:30:00 GMT+0000 (Coordinated Universal Time)
 cuid: cm6rskv00001409l4eopv9xr5
 slug: ansible-02-ansible-playbooks-modules
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1760984776732/cb766a4b-a9fd-4a79-a3e3-bd69e3a052cd.png
