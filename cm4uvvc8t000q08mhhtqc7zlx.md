@@ -1,6 +1,6 @@
 ---
 title: "Microservices-k8's flask-app Deployment on kubeadm"
-datePublished: Thu Dec 19 2024 05:30:55 GMT+0000 (Coordinated Universal Time)
+datePublished: Tue Aug 19 2025 18:30:00 GMT+0000 (Coordinated Universal Time)
 cuid: cm4uvvc8t000q08mhhtqc7zlx
 slug: microservices-k8s-flask-app-deployment-on-kubeadm
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1760877875214/f39a9d0c-0236-49cd-9896-4b74d61fea3d.png
