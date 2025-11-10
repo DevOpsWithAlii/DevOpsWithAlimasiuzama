@@ -160,7 +160,29 @@ Include:
 
 ## 9\. Step 5: Write the Jenkinsfile
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1762265720015/6eba1d39-f039-4931-8a75-667d8e6f4aeb.jpeg align="center")
+```plaintext
+pipeline {
+    agent any;
+    
+    stages{
+        stage("Code"){
+            steps{
+                git url: "https://github.com/DevOpsWithAlii/two-tier-flask-app.git", branch: "master"
+            }
+        }
+        stage("Build"){
+            steps{
+                sh "docker build -t flaskapp ."
+            }
+        }
+        stage("Deploy"){
+            steps{
+                sh "docker-compose down && docker-compose up -d"
+            }
+        }
+    }
+}
+```
 
 ## **10\. Step 6: Build and Deploy Flask Application**
 
@@ -209,5 +231,3 @@ You should see your Flask app (as in your screenshot: *“Hello Dosto, Let’s m
 
 You’ve successfully automated deployment of a **Two-Tier Flask + MySQL Application** using a **Jenkins CI/CD pipeline** hosted on **AWS EC2**.  
 This setup demonstrates your practical DevOps knowledge — perfect for your **portfolio and interviews**.
-
-### Read articles from **DevOpsWithAlimasiuzama** directly inside your inbox. Subscribe to the newsletter, and don't miss out.
