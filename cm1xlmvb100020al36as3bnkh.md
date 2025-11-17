@@ -125,10 +125,6 @@ Yes, you can write `#!/bin/sh` instead. The difference is that `sh` refers to th
 
 Here’s a basic shell script that prints out the message:
 
-**Copy**
-
-**Copy**
-
 ```plaintext
 #!/bin/bash
 echo "I will complete #90DaysOfDevOps challenge"
@@ -148,10 +144,6 @@ To run this:
 #### 4\. Shell Script to Take User Input and Print Variables
 
 This script takes input directly from the user and from arguments passed in when you run the script:
-
-**Copy**
-
-**Copy**
 
 ```plaintext
 #!/bin/bash
@@ -194,10 +186,6 @@ It will greet the user by name and print out the two arguments you passed in.
 #### 5\. Example of an If-Else Statement in Shell Scripting
 
 Here’s an example script that compares two numbers and prints out which one is greater:
-
-**Copy**
-
-**Copy**
 
 ```plaintext
 #!/bin/bash
