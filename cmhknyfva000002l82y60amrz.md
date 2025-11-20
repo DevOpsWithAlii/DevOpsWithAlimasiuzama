@@ -41,7 +41,7 @@ tags: google, devops, jenkins, cicd-cjy1vtdk2005kjjs17n8couc3, jenkins-devops, 9
 
 ## **1\. Introduction**
 
-In this project, we have deployed a **Two-Tier Flask Application** connected to a **MySQL database**, using **Jenkins Pipeline** for automation and **Docker** for containerization — all hosted on **AWS EC2**.
+In this project, we have deployed a **Two-Tier Flask Application** connected to a **MySQL database**, using **Jenkins Pipeline** for automation and **Docker** for containerization — all hosted on **AWS EC2.**.
 
 ## **2\. What is a Two-Tier Application?**
 
