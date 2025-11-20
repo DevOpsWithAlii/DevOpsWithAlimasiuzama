@@ -29,7 +29,7 @@ tags: google, aws-lambda, 90daysofdevops
     * [**Chatbot Integration in Messaging Applications:**](https://bhavyabojanapalli.hashnode.dev/aws-lambda-day-6#heading-chatbot-integration-in-messaging-applications)
         
 
-AWS Lambda is a serverless computing service provided by Amazon Web Services (AWS). At its core, serverless computing eliminates the need for developers to manage server infrastructure, allowing them to focus solely on writing code and deploying applications. AWS Lambda takes this concept a step further by enabling developers to run code in response to events without provisioning or managing servers.
+AWS Lambda is a serverless computing service provided by Amazon Web Services (AWS). At its core, serverless computing eliminates the need for developers to manage server infrastructure, allowing them to focus solely on writing code and deploying applications. AWS Lambda takes this concept a step further by enabling developers to run code in response to events without provisioning or managing servers..
 
 **Key Features:**
 
