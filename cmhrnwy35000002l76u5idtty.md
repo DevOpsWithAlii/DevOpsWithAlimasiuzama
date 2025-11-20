@@ -11,7 +11,7 @@ tags: docker, google, devops, docker-network, 90daysofdevops
 If you’ve ever wondered how Docker containers talk to each other, then this blog is for you!  
 Docker Networking allows containers to **communicate securely and efficiently**, just like systems in a real network.
 
-In this blog, we’ll create a **custom Docker network**, connect multiple containers (MySQL and Nginx) to it, and verify that they can communicate.
+In this blog, we’ll create a **custom Docker network**, connect multiple containers (MySQL and Nginx) to it, and verify that they can communicate….
 
 ## **Table of Contents**
 
