@@ -334,6 +334,8 @@ Useful in automation (CI/CD)
 Terraform needs a way to **remember** what it created.  
 So it keeps a memory file called **terraform.tfstate**.
 
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1763888527730/aa477ca7-a706-4c6f-814b-2726f2d8e702.jpeg align="center")
+
 ### Think of it like this:
 
 **Terraform state = Terraform’s memory**
@@ -342,14 +344,14 @@ Without this memory, Terraform won’t know:
 
 * * What resources it created
         
-    * IDs
-        
-    * IP addresses
-        
-    * Configuration values
-        
-    * Current status
-        
+        * IDs
+            
+        * IP addresses
+            
+        * Configuration values
+            
+        * Current status
+            
 
 So… state management means **managing Terraform’s memory properly**.
 
