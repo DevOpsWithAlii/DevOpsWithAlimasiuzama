@@ -95,23 +95,42 @@ chmod +x script.sh   # give execute permission
 
 Below are real-world scripts commonly used in system administration & DevOps.
 
-# **1\. Simple User Creation Script**
-
+````plaintext
+### Simple User Creation Script  
 This script creates a new Linux user and assigns a default password.
 
-```plaintext
-#!/bin/bash               # Shebang - tells the system to use Bash shell to run the script
+```bash
+#!/bin/bash
 
-read -p "Enter username: " USERNAME   # Reads input from user and stores it in USERNAME variable
+read -p "Enter username: " USERNAME
 
-PASSWORD="Password@123"               # Default password stored in a variable
+PASSWORD="Password@123"
 
-sudo useradd -m -s /bin/bash $USERNAME   # Creates user with home directory and bash shell
+sudo useradd -m -s /bin/bash $USERNAME
 
-echo "$USERNAME:$PASSWORD" | sudo chpasswd  # Sets the password for the new user
+echo "$USERNAME:$PASSWORD" | sudo chpasswd
 
-echo "User $USERNAME created with password: $PASSWORD"  # Prints confirmation
+echo "User $USERNAME created with password: $PASSWORD"
 ```
+
+<details>
+<summary><strong>Show / Hide Script Explanation</strong></summary>
+
+<br>
+
+```bash
+# !/bin/bash → Shebang telling Linux to use Bash.
+# read -p → asks the user to enter a username.
+# PASSWORD → stores a default password.
+# useradd -m -s → creates a user + home directory + bash shell.
+# chpasswd → sets the password for the new user.
+# final echo → prints a confirmation message.
+```
+
+</details>
+````
+
+# **1\.** Automation
 
 ### When to Use This Script?
 
@@ -259,21 +278,40 @@ echo "Log cleanup completed."           # Confirmation message
 
 This script creates a `.tar.gz` backup with timestamp.
 
-```plaintext
+````plaintext
+### Directory Backup Script  
+This script creates a backup of a directory with today's date.
+
+```bash
 #!/bin/bash
 
-SRC_DIR="/home/user/data"                         # Source directory to be backed up
-BACKUP_DIR="/home/user/backup"                    # Backup destination directory
+SRC_DIR="/home/user/data"
+BACKUP_DIR="/home/user/backup"
+BACKUP_FILE="$BACKUP_DIR/backup-$(date +%F).tar.gz"
 
-BACKUP_FILE="$BACKUP_DIR/backup-$(date +%F).tar.gz"  
-# Creates filename with current date
+mkdir -p $BACKUP_DIR
 
-mkdir -p $BACKUP_DIR                              # Creates backup folder if not exists
+tar -czvf $BACKUP_FILE $SRC_DIR
 
-tar -czvf $BACKUP_FILE $SRC_DIR                   # Creates compressed tar backup
-
-echo "Backup completed: $BACKUP_FILE"             # Shows backup path
+echo "Backup completed: $BACKUP_FILE"
 ```
+
+<details>
+<summary><strong>Show / Hide Explanation</strong></summary>
+
+<br>
+
+**Explanation of Each Line:**
+
+- `SRC_DIR="/home/user/data"` → Directory you want to back up  
+- `BACKUP_DIR="/home/user/backup"` → Location where backup will be stored  
+- `BACKUP_FILE="backup-<date>.tar.gz"` → Creates file name with current date  
+- `mkdir -p` → Creates backup folder if not present  
+- `tar -czvf` → Creates a compressed backup  
+- `echo` → Prints the final backup path  
+
+</details>
+````
 
 ### Why This Script Is Important?
 
