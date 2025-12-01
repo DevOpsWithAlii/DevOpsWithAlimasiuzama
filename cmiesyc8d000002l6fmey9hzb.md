@@ -1,5 +1,5 @@
 ---
-title: "Shell Scripting for DevOps Engineer — With Practical Scripts You Must Know"
+title: "Shell Scripting for System Use"
 datePublished: Tue Nov 25 2025 16:40:50 GMT+0000 (Coordinated Universal Time)
 cuid: cmiesyc8d000002l6fmey9hzb
 slug: shell-scripting-for-devops-engineer-with-practical-scripts-you-must-know
