@@ -1,0 +1,176 @@
+---
+title: "Hands-On: Installing Kubernetes Tools"
+datePublished: Wed Dec 03 2025 16:00:24 GMT+0000 (Coordinated Universal Time)
+cuid: cmiq715qc000102l8gcft6g4h
+slug: hands-on-installing-kubernetes-tools
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1764777543031/2f60ce10-9937-4415-8860-76167069e1c9.png
+tags: kubernetes, k8s, kind
+
+---
+
+## Installed & Configured everything step-by-step.
+
+## **Install Docker**
+
+```bash
+# Install docker 
+sudo apt install docker.io
+sudo usermod -aG docker $USER newgrp docker
+```
+
+## **Install Kind**
+
+```bash
+# For AMD64 / x86_64
+[ $(uname -m) = x86_64 ] && curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.30.0/kind-linux-amd64
+
+chmod +x ./kind
+sudo mv ./kind /usr/local/bin/kind
+
+# kind version check
+kind --version
+```
+
+## **Install kubectl**
+
+```bash
+# X86-64
+   curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+
+# Validate the binary (optional)
+# Download the kubectl checksum file
+   curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl.sha256"
+
+# Validate the kubectl binary against the checksum file:
+echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check
+
+# If valid, the output is:
+kubectl: OK
+```
+
+# **Creating Kubernetes Cluster Using Kind**
+
+```bash
+# make a working directory where u will execute all the work in k8s
+mkdir k8s-prectice
+cd k8s-prectice
+```
+
+Default cluster / config.yml
+
+```bash
+# vim config.yml
+
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+- role: worker
+- role: worker
+
+# create clusters
+create cluster --name=my-cluster  --config=config.yml
+```
+
+```bash
+# Check clusters
+kind get clusters
+
+# Check Kubernetes nodes
+kubectl get nodes
+
+# Delete cluster
+kind delete cluster --name=my-cluster
+
+# Check internal Docker containers
+docker ps
+```
+
+# Create a Namespace.yml file
+
+```bash
+# vim namesapce.yml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ngin-n
+  labels:
+    environment: dev
+
+# making namespace
+kubectl apply -f namespace.yml
+
+# Check namespaces
+kubectl get ns -n nginx-n
+
+# delete ns
+kubectl delete ns namespace.yml -n nginx-n
+```
+
+# **Create Pod**
+
+```bash
+# vim my-pod.yml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx:latest
+    ports:
+    - containerPort: 80
+
+# create a pods
+kubectl apply -f my-pod.yml -n nginx-n 
+
+# check pods 
+kubectl gets pod -n nginx-n
+
+# delete pods
+kubectl delete pod {pod name} -n nginx-n
+```
+
+# Create Deployment file
+
+```bash
+# vim deployment.yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:      
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+
+# metadata= Information to help uniquely identify the object, including a name and labels
+# spec= The desired state of the Deployment [1].
+# replicas=	The number of desired pods to maintain [1].
+# selector=	Defines how the Deployment finds which pods to manage (must match the template's labels) [1].
+# template=	The blueprint for the pods that will be created [1].
+# spec.containers= A list of containers that will run inside the pod [1].
+
+# execute deployment.yml file
+kubectl apply -f deployment.yml -n nginx-n
+
+# check pods/replicas
+kubectl get pods -n nginx-n
+
+# delete pods
+kubectl delete pod {pod name} -n nginx-n
+```
