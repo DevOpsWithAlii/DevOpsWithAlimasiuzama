@@ -174,3 +174,40 @@ kubectl get pods -n nginx-n
 # delete pods
 kubectl delete pod {pod name} -n nginx-n
 ```
+
+## **Scale the Pods**
+
+You can manually scale the number of pods in a Deployment using two methods:
+
+```bash
+# methods 1: Using the kubectl scale command
+kubectl scale deployment/nginx-deployment -n nginx-n --replicas=5 
+
+# check pods/replicas
+kubectl get pods -n nginx-n     # -n nginx-n  = namespace
+
+# Editing the YAML file and reapplying
+# Edit the nginx-deployment.yaml file to set 'replicas: 5'
+kubectl apply -f nginx-deployment.yaml
+```
+
+## **Managing Rollouts (Updates)**
+
+**Updating the container image (triggering a new rollout):**  
+You can update the image version directly using a command, which is one way to trigger an update without editing the YAML file directly.
+
+```bash
+kubectl set image deployment/nginx-deployment nginx=nginx:1.16.1 --record=true
+
+# Monitoring the rollout status
+kubectl rollout status deployment/nginx-deployment
+# Viewing rollout history
+kubectl rollout history deployment/nginx-deployment
+```
+
+## **Performing a Rollback**
+
+```bash
+# rollback
+kubectl rollout undo deployment/myapp-deployment
+```
