@@ -257,44 +257,44 @@ Every command (`kubectl`) and every internal request hits the API server first.
 
 * * Exposes the **Kubernetes API**, which is how every tool, script, or component talks to Kubernetes.
         
-    * Handles **authentication**, **authorization**, and **admission control**.
+        * Handles **authentication**, **authorization**, and **admission control**.
+            
+        * Validates every YAML file before storing it in etcd.
+            
+        * Converts your YAML into an internal Kubernetes JSON structure.
+            
         
-    * Validates every YAML file before storing it in etcd.
+        ### **Why it exists**
         
-    * Converts your YAML into an internal Kubernetes JSON structure.
+        Kubernetes is a fully API-driven system.  
+        Nothing happens without passing through the API Server.
         
-    
-    ### **Why it exists**
-    
-    Kubernetes is a fully API-driven system.  
-    Nothing happens without passing through the API Server.
-    
-    ### **How it works internally**
-    
-    * Multiple API servers can run behind a load balancer → **horizontal scaling**.
+        ### **How it works internally**
         
-    * When you run:
+        * Multiple API servers can run behind a load balancer → **horizontal scaling**.
+            
+        * When you run:
+            
         
-    
-    ```bash
-    kubectl apply -f deploy.yaml
-    ```
-    
-    this happens:
-    
-    1. kubectl sends REST request → API server
+        ```bash
+        kubectl apply -f deploy.yaml
+        ```
         
-    2. API server validates your YAML
+        this happens:
         
-    3. API server stores the desired state into etcd
+        1. kubectl sends REST request → API server
+            
+        2. API server validates your YAML
+            
+        3. API server stores the desired state into etcd
+            
+        4. Controllers & Scheduler react to this new state
+            
         
-    4. Controllers & Scheduler react to this new state
+        ### **One-liner**
         
-    
-    ### **One-liner**
-    
-    **The API Server is the communicator, validator, and entry point of the Kubernetes brain.**
-    
+        **The API Server is the communicator, validator, and entry point of the Kubernetes brain.**
+        
 
 Think of it as: **the receptionist + traffic manager of Kubernetes.**
 
@@ -461,7 +461,7 @@ Worker nodes run all application containers (Pods).
     
     ### **One-liner**
     
-    **kubelet ensures containers run exactly as Kubernetes wants.**ime
+    \*\*kubelet ensures containers run exactly as Kubernetes wants.\*\*ime
     
 
 ## **2\. Kube-proxy -** Kubernetes Networking Engine
@@ -753,124 +753,9 @@ Logical grouping (dev / stage / prod).
 
 Store configuration values.
 
-# **Hands-On: Installing Kubernetes Tools (Day 1)**
-
-I installed & configured everything step-by-step.
-
-### **Install Docker**
-
-```bash
-sudo apt install docker.io
-sudo usermod -aG docker $USER newgrp docker
-```
-
-### **Install Kind**
-
-```bash
-kind --version
-```
-
-### **Install kubectl**
-
-Downloaded X86-64 binary, validated, and moved to local bin.
-
-✔ kubectl version checked  
-✔ Verified binary OK
-
-(From my notes)
-
-# **Creating Kubernetes Cluster Using Kind**
-
-### Default cluster:
-
-```bash
-kind create cluster --name=my-cluster
-```
-
-### Check clusters:
-
-```bash
-kind get clusters
-```
-
-### Check internal Docker containers:
-
-```bash
-docker ps
-```
-
-### Check Kubernetes nodes:
-
-```bash
-kubectl get nodes
-```
-
-### Delete cluster:
-
-```bash
-kind delete cluster --name=my-cluster
-```
-
-# **Custom Cluster With Config File**
-
-I created a folder:
-
-```bash
-mkdir k8s-prectice
-cd k8s-prectice
-vim config.yml
-```
-
-# Creatting manifests File
-
-config.yml
-
-```bash
-kind: Cluster
-apiVersion: kind.x-k8s.io/v1alpha4
-
-nodes:
-- role: control-plane
-  image: kindest/node:v1.31.2
-- role: worker
-  image: kindest/node:v1.31.2
-- role: worker
-  image: kindest/node:v1.31.2
-```
-
-Then created cluster:
-
-```bash
-kind create cluster --name my-cluster --config=config.yml
-```
-
 # **Working With Namespaces**
 
-Check namespaces:
-
-```bash
-kubectl get ns
-```
-
-Create:
-
-```bash
-kubectl create ns dev
-```
-
-Delete:
-
-```bash
-kubectl delete ns dev
-```
-
-# **Creating My First Pod**
-
-```bash
-kubectl run nginx --image=nginx
-kubectl get pods
-kubectl describe pod/nginx
-```
+Check names
 
 This was my first real workload inside a Kubernetes cluster.
 
@@ -883,14 +768,6 @@ Today I learned:
 * Full Kubernetes Architecture (API → Pods)
     
 * Installed Docker, Kind, kubectl
-    
-* Created clusters
-    
-* Worked with namespaces
-    
-* Creating Manifestfile
-    
-* Created my first pod
     
 
 Kubernetes is huge but extremely interesting — excited for Day 2!
