@@ -46,6 +46,14 @@ echo "$(cat kubectl.sha256)  kubectl" | sha256sum --check
 
 # If valid, the output is:
 kubectl: OK
+
+# Install Kubectl now 
+sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+# If you do not have root access on the target system,
+chmod +x kubectl
+mkdir -p ~/.local/bin
+mv ./kubectl ~/.local/bin/kubectl
 ```
 
 # **Creating Kubernetes Cluster Using Kind**
@@ -175,7 +183,7 @@ kubectl get pods -n nginx-n
 kubectl delete pod {pod name} -n nginx-n
 ```
 
-## **Scale the Pods**
+## **Scale the Pods/replicasets**
 
 You can manually scale the number of pods in a Deployment using two methods:
 
@@ -210,4 +218,31 @@ kubectl rollout history deployment/nginx-deployment
 ```bash
 # rollback
 kubectl rollout undo deployment/myapp-deployment
+```
+
+# **Service**
+
+Expose an application running in your cluster behind a single outward-facing endpoint, even when the workload is split across multiple backends.
+
+In Kubernetes, a Service is a method for exposing a network application that is running as one or more [Pods](https://kubernetes.io/docs/concepts/workloads/pods/) in your cluster.
+
+```bash
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-service
+  namespace: nginx-n
+spec:
+  selector:
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+
+# give To disable all privileged ports, set this to 0.
+Sudo sysctl -w net.ipv4.ip_unprivileged_port_start=0   # only for nginx will work.
+
+# Now Expose on Browser ports
+kubectl port-forward service/nginx-service -n nginx-n 80:80 --address=0.0.0.0
 ```
