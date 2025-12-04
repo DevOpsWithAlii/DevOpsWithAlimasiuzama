@@ -97,6 +97,9 @@ Add the same public key to your server’s `authorized_keys`.
 
 ```bash
 ssh -i ~/.ssh/ansible_key ubuntu@<server-ip>
+
+# Fix errore if not connect servers
+export ANSIBLE_HOST_KEY_CHECKING=False
 ```
 
 # Inventory File (Very Important)
@@ -107,14 +110,6 @@ Default inventory location:
 
 ```plaintext
 /etc/ansible/hosts
-```
-
-Better to create your own project inventory:
-
-```bash
-mkdir ~/ansible
-cd ~/ansible
-vim hosts
 ```
 
 Example `hosts` file:
