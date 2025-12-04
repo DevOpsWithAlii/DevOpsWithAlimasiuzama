@@ -166,8 +166,8 @@ Ad-hoc commands let you run quick commands without playbooks.
 # Install Nginx (Examples)
 
 ```bash
-ansible server1 -b -a "apt-get update" -i hosts
-ansible server1 -b -a "apt-get install nginx -y" -i hosts
+ansible server1 -b -a "apt-get update" 
+ansible server1 -b -a "apt-get install nginx -y" 
 ansible server1 -b -a "systemctl stop nginx" -i hosts
 ansible server1 -b -a "apt-get remove nginx -y" -i hosts
 ```
@@ -175,10 +175,10 @@ ansible server1 -b -a "apt-get remove nginx -y" -i hosts
 # Install Docker (Examples)
 
 ```bash
-ansible server1 -b -a "apt-get update" -i hosts
-ansible server1 -b -a "apt-get install docker.io -y" -i hosts
+ansible server1 -b -a "apt-get update" 
+ansible server1 -b -a "apt-get install docker.io -y" 
 ansible server1 -b -a "systemctl status docker" -i hosts
-ansible server1 -b -a "apt-get remove docker.io -y" -i hosts
+ansible server1 -b -a "apt-get remove docker.io -y" 
 ```
 
 # Package Management (Module vs Shell)
@@ -186,13 +186,13 @@ ansible server1 -b -a "apt-get remove docker.io -y" -i hosts
 **Using module (recommended):**
 
 ```bash
-ansible all -m apt -a "name=curl,git state=present update_cache=yes" -b -i hosts
+ansible all -m apt -a "name=curl,git state=present update_cache=yes" -b 
 ```
 
 **Ad-hoc shell (less ideal):**
 
 ```bash
-ansible all -a "apt-get install -y curl git" -b -i hosts
+ansible all -a "apt-get install -y curl git" -b 
 ```
 
 ### Quick comparison table: Module vs Ad-hoc shell
@@ -207,16 +207,16 @@ ansible all -a "apt-get install -y curl git" -b -i hosts
 # Service Management (Module examples)
 
 ```bash
-ansible all -m ansible.builtin.service -a "name=nginx state=started" -b -i hosts
-ansible all -m ansible.builtin.service -a "name=nginx state=restarted" -b -i hosts
-ansible all -a "systemctl is-active nginx" -b -i hosts
+ansible all -m ansible.builtin.service -a "name=nginx state=started" -b 
+ansible all -m ansible.builtin.service -a "name=nginx state=restarted" -b 
+ansible all -a "systemctl is-active nginx" -b 
 ```
 
 # File & Log Commands
 
 ```bash
 ansible all -a "du -sh /home/*" -b -i hosts
-ansible all -a "tail -n 50 /var/log/syslog" -b -i hosts
+ansible all -a "tail -n 50 /var/log/syslog" -b 
 ```
 
 # Common Ansible Modules (Handy Table)
