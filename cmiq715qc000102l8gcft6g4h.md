@@ -77,7 +77,7 @@ nodes:
 - role: worker
 
 # create clusters
-create cluster --name=my-cluster  --config=config.yml
+kind create cluster --name=my-cluster  --config=config.yml
 ```
 
 ```bash
@@ -241,7 +241,7 @@ spec:
       targetPort: 80
 
 # give To disable all privileged ports, set this to 0.
-Sudo sysctl -w net.ipv4.ip_unprivileged_port_start=0   # only for nginx will work.
+sudo sysctl -w net.ipv4.ip_unprivileged_port_start=0   # only for nginx will work.
 
 # Now Expose on Browser ports
 kubectl port-forward service/nginx-service -n nginx-n 80:80 --address=0.0.0.0
